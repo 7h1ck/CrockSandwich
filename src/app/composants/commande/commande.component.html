@@ -1,0 +1,129 @@
+<!-- ======= Specials Section ======= -->
+<section id="specials" class="specials row">
+    <div class="col-3 ">
+        <div class="container h-100 ">
+            <div class="d-flex flex-column flex-nowrap " cdkDropList (cdkDropListDropped)="drop($event)" [cdkDropListData]="sandwich.ingredients">
+                <div class="p-2 ">
+                    <img src="assets/img/ingrédients/pain-top.png" alt="" class="img-fluid">
+                </div>
+                <!-- <div class="p-2 ">Flex item 2</div>
+              <div class="p-2 bg-primary">Flex item 3</div> -->
+                <div class="p-2 " *ngFor="let ingredient of sandwich.ingredients">
+                    <img src="{{ingredient.imgUrl}}" alt="" class="img-fluid">
+                </div>
+                <div class="p-2 ">
+                    <img src="assets/img/ingrédients/pain-bottom.png" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-8" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>Ingrédients</h2>
+            <p>Choisisser des ingrédients</p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-3">
+                <ul class="nav nav-tabs flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active show" data-toggle="tab" href="#tab-1">Viande hâché</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#tab-2">Sauces</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#tab-3">Cruidités</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#tab-4">épices</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#tab-5">Fromage</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-9 mt-4 mt-lg-0">
+                <div class="tab-content">
+                    <div class="tab-pane active show" id="tab-1">
+                        <div class="row" cdkDropList (cdkDropListDropped)="drop($event)" [cdkDropListData]="filterItemsOfType('Viande haché')">
+                            <!-- <div class=" p-2 " *ngFor="let ingredient of ingredients ">
+                              <img src=" " alt=" " class="img-fluid ">
+                          </div> -->
+
+                            <div *ngFor="let ingredient of filterItemsOfType( 'Viande haché') " sandwich="ingredienjt" class=" col-lg-2 text-center order-1 order-lg-2 draggable-element " cdkDrag>
+                                <img src="{{ingredient.imgUrl}} " alt=" " class="img-fluid " id="{{ingredient.id}}">
+                            </div>
+                            <!-- <div class="col-lg-2 text-center order-1 order-lg-2 draggable-element " cdkDrag>
+                              <img src="assets/img/ingrédients/viande-1.png " alt=" " class="img-fluid ">
+                          </div>
+                          <div class="col-lg-2 text-center order-1 order-lg-2 draggable-element " cdkDrag>
+                              <img src="assets/img/ingrédients/viande-2.png " alt=" " class="img-fluid ">
+                          </div> -->
+
+
+                        </div>
+                    </div>
+                    <div class="tab-pane " id="tab-2">
+                        <div class="row " cdkDropList (cdkDropListDropped)="drop($event) " [cdkDropListData]="filterItemsOfType('Sauce')">
+                            <!-- <div class="col-lg-2 text-center order-1 order-lg-2 ">
+                              <img src="assets/img/ingrédients/viande-1.png " alt=" " class="img-fluid ">
+                          </div> -->
+                            <div *ngFor="let ingredient of filterItemsOfType('Sauce')" class=" col-lg-2 text-center order-1 order-lg-2 draggable-element " cdkDrag>
+                                <img src="{{ingredient.imgUrl}}" alt=" " class="img-fluid ">
+
+                            </div>
+                            <!-- <div *ngFor="let ingredient of ingredients " class=" col-lg-2 text-center order-1 order-lg-2 draggable-element " cdkDrag>
+                              <img *ngIf="ingredient.libelle=='Sauce' " src="" alt=" " class="img-fluid ">
+                          </div> -->
+                        </div>
+                    </div>
+                    <div class="tab-pane " id="tab-3">
+                        <div class="row " cdkDropList (cdkDropListDropped)="drop($event)" [cdkDropListData]="filterItemsOfType('Cruidité')">
+                            <div *ngFor=" let ingredient of filterItemsOfType( 'Cruidité') " class=" col-lg-2 text-center order-1 order-lg-2 draggable-element " cdkDrag>
+                                <img src="{{ingredient.imgUrl}} " alt=" " class="img-fluid ">
+                            </div>
+                            <!-- <div *ngFor="let ingredient of filterItemsOfType( 'Salade') " class=" col-lg-2 text-center order-1 order-lg-2 draggable-element " cdkDrag>
+                              <img src="{{ingredient.imgUrl}} " alt=" " class="img-fluid ">
+                          </div>
+                          <div *ngFor="let ingredient of filterItemsOfType( 'Oignon') " class=" col-lg-2 text-center order-1 order-lg-2 draggable-element " cdkDrag>
+                              <img src="{{ingredient.imgUrl}} " alt=" " class="img-fluid ">
+                          </div> -->
+                            <!-- <div *ngFor="let ingredient of ingredients " class="col-lg-2 text-center order-1 order-lg-2 ">
+                              <img src=" " alt=" " class="img-fluid ">
+                          </div>
+                          <div class="col-lg-2 text-center order-1 order-lg-2 ">
+                              <img src="assets/img/ingrédients/salade-verte.jpg " alt=" " class="img-fluid ">
+                          </div>
+                          <div class="col-lg-2 text-center order-1 order-lg-2 ">
+                              <img src="assets/img/ingrédients/ognon.jpg " alt=" " class="img-fluid ">
+                          </div> -->
+
+                        </div>
+                    </div>
+                    <div class="tab-pane " id="tab-4">
+                        <div class="row " cdkDropList (cdkDropListDropped)="drop($event) ">
+                            <div class="col-lg-2 text-center order-1 order-lg-2 ">
+                                <img src="assets/img/ingrédients/viande-1.png " alt=" " class="img-fluid ">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane " id="tab-5">
+                        <div class="row " cdkDropList (cdkDropListDropped)="drop($event) " [cdkDropListData]="filterItemsOfType('Fromage Veg Cheddar')">
+                            <div *ngFor=" let ingredient of filterItemsOfType( 'Fromage Veg Cheddar') " class=" col-lg-2 text-center order-1 order-lg-2 draggable-element " cdkDrag>
+                                <img src="{{ingredient.imgUrl}} " alt=" " class="img-fluid ">
+                            </div>
+                            <!-- <div class="col-lg-2 text-center order-1 order-lg-2 ">
+                              <img src="assets/img/ingrédients/formaggio-veg-cheddar.jpg " alt=" " class="img-fluid ">
+                          </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<!-- End Specials Section -->
