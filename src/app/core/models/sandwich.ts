@@ -3,11 +3,10 @@ import { Ingredient } from "./ingredient";
 
 export interface Sandwich{
   id?: number,
-  categorie?:CategorieSandwich,
+  categorie?:CategorieSandwich|string,
   libelle?:string,
   description?:string,
-  prix?:number,
+  prix:number,
   imgUrl?:string,
   ingredients:Ingredient[]
-
 }

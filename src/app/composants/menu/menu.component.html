@@ -4,7 +4,7 @@
 
         <div class="section-title">
             <h2>Menu</h2>
-            <p>Check Our Tasty Menu</p>
+            <p>Consulter notre Menu</p>
         </div>
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -20,9 +20,18 @@
 
         <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
 
-            <div class="col-lg-6 menu-item filter-starters">
-                <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img" alt="">
+            <div class="col-lg-6 menu-item filter-specialty" *ngFor="let sandwiche of sandwiches">
+                <img src="{{sandwiche.imgUrl}}" class="menu-img" alt="">
                 <div class="menu-content">
+                    <a href="#" routerLink="/description/{{sandwiche.id}}">{{sandwiche.libelle}}</a><span>{{sandwiche.prix}}</span>
+                </div>
+                <div class="menu-ingredients">
+                    {{sandwiche.description}}.
+                </div>
+            </div>
+            <!-- <div class="col-lg-6 menu-item filter-starters">
+              <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img" alt="">
+              <div class="menu-content">
                     <a href="#">Lobster Bisque</a><span>$5.95</span>
                 </div>
                 <div class="menu-ingredients">
@@ -101,14 +110,15 @@
             </div>
 
             <div class="col-lg-6 menu-item filter-specialty">
-                <img src="assets/img/menu/lobster-roll.jpg" class="menu-img" alt="">
+                <img src="http://127.0.0.1:8000/burger-king.jpg" class="menu-img" alt="">
                 <div class="menu-content">
                     <a href="#">Lobster Roll</a><span>$12.95</span>
                 </div>
                 <div class="menu-ingredients">
                     Plump lobster meat, mayo and crisp lettuce on a toasted bulky roll
                 </div>
-            </div>
+            </div> -->
+
 
         </div>
 

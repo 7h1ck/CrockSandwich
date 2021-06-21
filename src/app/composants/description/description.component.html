@@ -1,0 +1,90 @@
+<!-- ======= About Section ======= -->
+<section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+
+        <div class="row">
+            <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
+                <div class="about-img">
+                    <img src="{{sandwich.imgUrl}}" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+                <h3>{{sandwich.libelle}} </h3>
+                <h3>{{ingredientService.getIngredientByUrl('/api/ingredients/1')|json}} </h3>
+                <p class="text-warning">{{sandwich.prix}} F</p>
+                <p class="font-italic">
+                    {{sandwich.description}}
+                </p>
+                <ul>
+                    <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                    <li><i class="icofont-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                    <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                </ul>
+                <p>
+                    Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+                    id est laborum
+                </p>
+                <!-- <a href="#book-a-table" class="btn btn-outline-warning animated fadeInUp scrollto">Commander</a> -->
+
+            </div>
+        </div>
+
+    </div>
+    <!-- ======= Book A Table Section ======= -->
+    <section id="book-a-table" class="book-a-table">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>Commande</h2>
+                <p>Passer votre commande</p>
+            </div>
+
+            <form action="" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100" [formGroup]="formCommande">
+                <div class="form-row">
+                    <div class="col-lg-4 col-md-6 form-group">
+                        <input type="text" name="fullName" class="form-control" id="name" placeholder="Nom complet" data-rule="minlen:4" data-msg="Please enter at least 4 chars" formControlName="fullName">
+                        <div class="validate"></div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 form-group">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Please enter a valid email" formControlName="email">
+                        <div class="validate"></div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 form-group">
+                        <input type="text" class="form-control" name="telephone" id="phone" placeholder="Numéro de Téléphone" data-rule="minlen:4" data-msg="Please enter at least 4 chars" formControlName="telephone">
+                        <div class="validate"></div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 form-group">
+                        <label for="">Date</label>
+                        <input type="date" name="date" class="form-control" id="date" placeholder="Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars" formControlName="date">
+                        <div class="validate"></div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 form-group">
+                        <label for="">Heure</label>
+
+                        <input type="time" class="form-control" name="heure" id="time" placeholder="Time" data-rule="minlen:4" data-msg="Please enter at least 4 chars" formControlName="heure">
+                        <div class="validate"></div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 form-group">
+                        <label for="">Quantité</label>
+
+                        <input type="number" class="form-control" name="quantite" id="people" placeholder="# of people" data-rule="minlen:1" data-msg="Please enter at least 1 chars" formControlName="quantite">
+                        <div class="validate"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" name="adresse" rows="5" placeholder="Adresse" formControlName="adresse"></textarea>
+                    <div class="validate"></div>
+                </div>
+                <div class="mb-3">
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
+                </div>
+                <div class="text-center"><button (click)="onValidCmmande()">Valider</button></div>
+            </form>
+
+        </div>
+    </section>
+    <!-- End Book A Table Section -->
+</section>
+<!-- End About Section -->

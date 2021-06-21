@@ -1,4 +1,4 @@
 export interface CategorieIngredient{
-  id:number;
+  id?:number;
   libelle:string;
 }

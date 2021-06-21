@@ -8,6 +8,9 @@ import { HomePageComponent } from './composants/home-page/home-page.component';
 import { TopPageComponent } from './composants/top-page/top-page.component';
 import { CommandeComponent } from './composants/commande/commande.component';
 import { MenuComponent } from './composants/menu/menu.component';
+import { FormCommandeComponent } from './composants/commande/form-commande/form-commande.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { DescriptionComponent } from './composants/description/description.component';
 
 @NgModule({
   declarations: [
@@ -15,13 +18,16 @@ import { MenuComponent } from './composants/menu/menu.component';
     HomePageComponent,
     TopPageComponent,
     CommandeComponent,
-    MenuComponent
+    MenuComponent,
+    FormCommandeComponent,
+    DescriptionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     DragDropModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
